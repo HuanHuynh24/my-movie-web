@@ -1,0 +1,243 @@
+.slide-container{
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 600px;
+    padding: 50px;
+    box-shadow: 0 30px 50px #bdbdbd; */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#slide{
+    width: max-content;
+    margin-top: 50px;
+    height: 100%;
+}
+#slide .item{
+    width: 200px;
+    height: 300px;
+    background-position: 50% 50%;
+    display: inline-block;
+    transition: 0.5 all;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+   
+    transform: translate(0, -10%);
+    border-radius: 20px;
+    transition: background-image 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+#slide .item:nth-child(1),
+#slide .item:nth-child(2){
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+}
+#slide .item:nth-child(3){
+    left: 55%;
+}
+#slide .item:nth-child(4){
+    left: calc(55% + 220px);
+}
+#slide .item:nth-child(n+5){
+    left: calc(55% + 440px);
+
+}
+#slide .item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 500px;
+    text-align: left;
+    padding: 0;
+    color: #eee;
+    transform: translate(0, -50%);
+    display: none;    
+    z-index: 99999999;
+   
+
+}
+#slide .item:nth-child(2) .content{
+    display: block;
+    z-index: 10;
+}
+#slide .item .content h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1 forwards;
+    font-weight: bold;
+    color: transparent;
+    background: url("../img/texture.jpg") repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+}  
+
+#slide .item .content p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out .3s 1 forwards;
+    color: transparent;
+    background: url("../img/texture.jpg") repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+#slide .item .content button{
+    padding: 10px 20px;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out .6s 1 forwards;
+    z-index: 99999;
+}
+#slide .item{
+}
+@keyframes showcontent{
+    from{
+        opacity: 0;
+        transform: translate(0, 110px);
+        filter:blur(33px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0, 0);
+        filter: blur(0px);
+    }
+}
+.slide-container .buttons{
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+   
+}
+.slide-container .buttons .btn{
+    color: #fff;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+    transition: all 0.5s;
+}
+.slide-container .buttons .btn:hover{
+    color: #340606;
+    cursor: pointer;
+}
+.overlay{
+    background-color: #000;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+/* responsive */
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    
+    #slide .item:nth-child(n+3){
+        display: none !important;
+    
+    }
+    #slide .item .content{
+        width: 100%;
+        left: 0;
+        padding: 20px;
+    }
+}
+
+/* Medium Mobile */
+@media only screen and (min-width: 481px) and (max-width: 976px) {
+    /* Styles for medium mobile devices */
+    #slide .item{
+        width: 180px;
+        height: 240px;
+    }
+    #slide .item:nth-child(3){
+        left: 15%;
+        top: 70%;
+    }
+    #slide .item:nth-child(4){
+        top: 70%;
+        left: calc(15% + 200px);
+    }
+    #slide .item:nth-child(n+5){
+        top: 70%;
+        left: calc(15% + 400px);
+    
+    }
+}
+
+/* Tablet Portrait */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablets in portrait mode */
+    #slide .item{
+        width: 180px;
+        height: 240px;
+    }
+    #slide .item:nth-child(3){
+        left: 15%;
+        top: 70%;
+    }
+    #slide .item:nth-child(4){
+        top: 70%;
+        left: calc(15% + 200px);
+    }
+    #slide .item:nth-child(n+5){
+        top: 70%;
+        left: calc(15% + 400px);
+    
+    }
+}
+
+/* Tablet Landscape */
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    /* Styles for tablets in landscape mode */
+    #slide .item{
+        width: 150px;
+        height: 250px;
+    }
+    #slide .item:nth-child(3){
+        left: 51%;
+    }
+    #slide .item:nth-child(4){
+        left: calc(51% + 170px);
+    }
+    #slide .item:nth-child(n+5){
+        left: calc(51% + 340px);
+    
+    }
+}
+
+/* Small Desktop */
+@media only screen and (min-width: 1281px) and (max-width: 1366px) {
+    /* Styles for small desktops */
+}
+
+/* Medium Desktop */
+@media only screen and (min-width: 1367px) and (max-width: 1440px) {
+    /* Styles for medium desktops */
+}
+
+/* Large Desktop */
+@media only screen and (min-width: 1441px) {
+    /* Styles for large desktops */
+}

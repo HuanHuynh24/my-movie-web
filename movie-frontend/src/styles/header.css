@@ -1,0 +1,46 @@
+
+.header{
+    padding: 20px;
+    margin: 0;
+    background-color: rgba(225, 225, 225, 0.4);
+    backdrop-filter: blur(1px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999999999;
+}
+.header li,
+.header li a{
+    font-size: 1.225rem;
+    font-weight: bold !important;
+    color: #fff;
+}
+.header li:hover,
+ .header li a:hover{
+    color: rgb(152, 28, 28) !important;
+    transition: all 0.5s ease-in-out;;
+}
+.header .nav{
+    width: 65%;
+}
+.logo img{
+    width: 100%;
+}
+@media only screen and (max-width: 480px) {
+    
+    .header .nav{
+        display: none !important;
+    }
+}
+
+/* Medium Mobile */
+@media only screen and (min-width: 481px) and (max-width: 976px) {
+    .header .nav{
+        display: none !important;
+    }
+    .logo{
+        width: 150px;
+
+    }
+    
+}
