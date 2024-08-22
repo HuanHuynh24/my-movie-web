@@ -24,7 +24,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-
+router.get('/',(req, res) => {
+  console.log("Upload")
+});
 // Lấy tất cả phim
 router.get('/movies', async (req, res) => {
   try {
