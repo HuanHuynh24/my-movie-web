@@ -15,7 +15,7 @@ if (!fs.existsSync(uploadDir)) {
 // Cấu hình multer để lưu trữ ảnh
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/')
+    cb(null, uploadDir)  // sử dụng đường dẫn tuyệt đối
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));

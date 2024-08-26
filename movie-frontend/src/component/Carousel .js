@@ -42,7 +42,7 @@ const Carousel = () => {
             {currentSlides.map((slide, index) => {
               return (
                 <div className="slide carousel col" key={index}>
-                  <img src={`https://my-movie-web-be.vercel.app${slide.imgBanner}`} alt="" />
+                  <img src={`https://phimhay2402.vercel.app/${slide.imgBanner}`} alt="" />
                   <div className="content">
                     <span>{index+1}</span>
                   </div>

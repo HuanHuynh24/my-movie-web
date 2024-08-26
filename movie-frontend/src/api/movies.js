@@ -9,12 +9,12 @@ const useMovies = () => {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await axios.get("https://my-movie-web-be.vercel.app/api/movies/");
+                const response = await axios.get("https://phimhay2402.vercel.app/api/movies/");
                 setMovies(response.data);
             } catch (error) {
                 setError(error);
             } finally {
-                setLoading(false);
+                setLoading(true);
             }
         };
 

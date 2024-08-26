@@ -5,7 +5,7 @@ import "../styles/thumbnail.css";
 const Thumbnail = ({ movieName, urlImg }) => {
   return (
     <div className="thumbnail carousel ">
-      <img src={`https://my-movie-web-be.vercel.app${urlImg}`} alt="thumbnail" />
+      <img src={`https://phimhay2402.vercel.app/${urlImg}`} alt="thumbnail" />
       <div className="icon">
         <FontAwesomeIcon icon="fa-solid fa-share-nodes" className="icon-share"/>
         <FontAwesomeIcon icon="fa-solid fa-heart" className="icon-heart" />

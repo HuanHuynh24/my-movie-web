@@ -41,7 +41,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 300px;
+  width: 100%;
+  aspect-ratio: 16/9; 
 }
 .slide-carousel .slide:nth-child(n + 6){
   display: none;
